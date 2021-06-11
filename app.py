@@ -3,7 +3,7 @@ import pandas as pd
 from os import listdir
 from os.path import isfile, join
 import json
-# from fbprophet import Prophet
+from fbprophet import Prophet
 import pickle
 import datetime as dt
 import markdown as md
@@ -96,12 +96,10 @@ class Countries(Resource):
 class ForecastedCountryRevenue(Resource):
     def get(self,country):
         countryClean = country.lower().replace(" ", "")
-        ## MODEL CODE - TEMPORARY REMOVE 
         with open(f"model/output/{countryClean}.pkl", "rb") as f:
             m = pickle.load(f)
         forecast = m.predict(m.make_future_dataframe(
             periods=365))[-1:][["ds", "yhat", "yhat_lower", "yhat_upper"]].reset_index(drop=True)
-        # forecast = pd.read_csv(f"model/data_output/{countryClean}.csv")
         forecast_dict = {
             "date": forecast["ds"][0],
             "yhat": forecast["yhat"][0],
