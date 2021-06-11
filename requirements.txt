@@ -1,0 +1,13 @@
+Markdown==3.3.4
+Flask==1.1.2
+Flask-Session==0.3.2
+gunicorn==20.0.4
+Jinja2==2.11.3
+kneed==0.7.0
+numpy==1.19.2
+pandas==1.2.2
+pip==21.0.1
+urllib3==1.26.3
+flask-restx==0.2.0
+pystan==2.18.0.0
+fbprophet==0.7.1

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row" style="padding-top:20px">
+        <div class="col-md-3">
+            <h4>Year</h4>
+            <select id="yearSelector" class="form-select" aria-label="Default select example">
+                <option selected value="2004,2005,2006,2007">All Years</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <h4>Metric</h4>
+            <select id="metricSelector" class="form-select" aria-label="Default select example">
+                <option selected value="Revenue">Revenue</option>
+                <option value="Cost">Cost</option>
+                <option value="Profit">Profit</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="padding-top:20px">
+        <div class="col-md-6">
+            <div id="timeseries"></div>
+        </div>
+        <div class="col-md-6">
+            <div id="country"></div>
+        </div>
+    </div>
+    <div class="row" style="padding-top:20px">
+        <div class="col-md-6">
+            <div id="channel"></div>
+        </div>
+        <div class="col-md-6">
+            <div id="product"></div>
+        </div>
+    </div>
+</div>
+
+<script src="../static/js/index.js"></script>
+
+{% endblock %}
